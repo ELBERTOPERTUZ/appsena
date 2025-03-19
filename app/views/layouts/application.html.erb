@@ -1,4 +1,4 @@
--<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title><%= content_for(:title) || "Appsena" %></title>
@@ -23,6 +23,41 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header></header>
+    <nav></nav>
+    <section id="id1">
+      <aside><table>
+            <tbody>
+              <tr>
+                  <td>
+                    <%= link_to "nuevo carro", new_car_path %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= link_to "Show this carro", @car %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= link_to "Edit this car", edit_car_path(1) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= link_to "Back to cars", cars_path %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                      <%= link_to "Destroy this car", @car %>
+                    </td>
+                </tr>
+            </tbody>
+        </table></aside>
+      <section id="id2"><%= yield %></section>
+    </section>
+    <footer></footer>
+
   </body>
 </html>
