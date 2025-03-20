@@ -16,6 +16,14 @@ module Appsena
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
+    config.to_prepare do
+      Devise::SessionsController.layout "empty"
+      Devise::RegistrationsController.layout "empty"
+      Devise::ConfirmationsController.layout "empty"
+      Devise::UnlocksController.layout "empty"
+      Devise::PasswordsController.layout "empty"
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
